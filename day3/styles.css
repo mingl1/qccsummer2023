@@ -1,0 +1,176 @@
+*{
+  box-sizing: border-box;
+
+}
+html{
+  scroll-behavior: smooth;
+}
+img{
+  width: 100%;
+  display: block;
+}
+
+.card{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 23%;
+  margin: 2% 0;
+  box-shadow: 0px 0px .25em 1px rgb(92, 85, 85);
+  transition: ease 300ms;
+}
+
+.card:hover{
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px 1px rgb(0, 0, 0);
+}
+.cardContent{ 
+padding: .5rem .8rem;
+}
+
+.cardContent p:nth-child(1){
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: olivedrab
+}
+.cardContent p:nth-child(2){
+  font-size: 1em;
+  margin: 0;
+  color: brown;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 2em auto;
+  width: 90%;
+  flex-wrap: wrap;
+}
+
+.imgCard{
+  width: 45%;
+  box-shadow: 1px 1px .25em 1px rgb(92, 85, 85);
+  position: relative;
+}
+.imgCardContent, .imgCardContent2{
+  position: absolute;
+  bottom: 35%;
+  top: 35%;
+  left: 25%;
+  right: 25%;
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  padding: .5rem;
+  text-align: center;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.imgCardContent2{
+  background:none;
+  color: aqua;
+  font-size: 1.5rem;
+  top:10%;
+  left: 10%;
+  margin: 0;
+  justify-content: left;
+  
+}
+.imgCardContent2 p {
+  margin: 0;
+  padding: 0;
+}
+.imgCardContent2 p:nth-child(1){
+  text-align: left;
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(196, 41, 113)
+}
+.imgCardContent p{
+  margin: auto;
+}
+
+.imgCard:hover .imgCardContent2{
+  display: none;
+}
+.imgCard:hover {
+  box-shadow: 0px 0px 10px 1px rgb(0, 0, 0);
+  border: ridge 2px black;
+}
+.imgCard:hover .imgCardContent3{
+  display:block;
+  position: absolute;
+  border: ridge 2px black;
+}
+
+.imgCardContent3{
+  top: 10%;
+  left: 10%;
+  background-color: rgba(245, 245, 220, 0.554);
+  display: none;
+}
+
+.imgCardContent3 p{
+  margin: auto;
+  padding: .5rem;
+}
+.imgCardContent3 p:nth-child(1){
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: rgb(196, 41, 41)
+}
+
+.square{
+  width: 200px;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  transition: ease 500ms;
+  background-color: black;
+}
+.square:hover{
+  background-color: rgb(255, 0, 0);
+  transform: translateX(100px) scale(1.5);
+  transition:cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+  border-radius: 50%;
+  z-index: 10;
+  margin-bottom: 100px;
+  margin-top: 100px;
+
+}
+
+.zoomContainer{
+  width: 300px;
+  position: relative;
+}
+
+.zoomMSG,.slideMSG{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 45%;
+  text-align: center;
+  transform: scale(0);
+  transition: ease 500ms;
+  font-size: 2em;
+  color: whitesmoke;
+ 
+}
+.slideMSG{
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.zoomContainer:hover .zoomMSG{
+  transform: scale(1);
+}
+
+.zoomContainer:hover .slideMSG{
+  transform: translateX(0) ;
+  opacity: 1;
+  display: block;
+}
