@@ -1,30 +1,25 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Form from "./components/Form";
+// import About from "./components/About";
+// import Contact from "./components/Contact";
+import Place from "./components/Place";
+import Navbar from "./components/Navbar";
 import React from "react";
-
-const MyForm = () => {
-  const [name, setName] = React.useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Submitting Name ${name}`);
-  };
+const App = function() {
   return (
-    <form className="ui form" onSubmit={handleSubmit}>
-      <fieldset>
-        <legend>Form in ReactJS</legend>
-        <label for="name">Enter your name: </label>
-        <input
-          type="text"
-          id="name"
-          placeholder="type your name..."
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <div style={{ marginTop: "1em" }}>
-          <input type="submit" className="ui button"></input>
-        </div>
-      </fieldset>
-    </form>
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navbar />}>
+            <Route index element={<Place name="Home" />}></Route>
+            <Route path="/About" element={<Place name="About us" />}></Route>
+            <Route path="/Contact" element={<Place name="Contact" />}></Route>
+            <Route path="/Form" element={<Form />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 };
 
-export default MyForm;
+export default App;
