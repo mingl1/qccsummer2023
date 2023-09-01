@@ -1,0 +1,96 @@
+<div class="ui header centered" style="padding: 15px">
+  <h1 style="">Skin Care Center</h1>
+</div>
+<div
+  class="ui container centered"
+  style="
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <div
+    class=""
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <img src="../assets/product.webp" alt="" style="width: 75%; height: 100%" />
+    <h3>BUBBLE Fresh Start Gel Cleanser</h3>
+  </div>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      text-align: left;
+      width: 75%;
+      align-items: center;
+      padding: 15px;
+    "
+  >
+    <div style="flex: 1 1 0px; width: 290px; white-space: nowrap">
+      <span style="color: red; font-size: xx-large">$14.99</span>
+      <span style="text-decoration: line-through">$19.99</span>
+      <div style="font-size: small; color: red">Only 20 items left</div>
+    </div>
+
+    <div
+      class="ui action input"
+      speechify-initial-font-family='Lato, "Helvetica Neue", Arial, Helvetica, sans-serif'
+      speechify-initial-font-size="14px"
+      style="flex: 1 1 0px; width: 290px"
+    >
+      <div
+        class="ui labeled input"
+        speechify-initial-font-family='Lato, "Helvetica Neue", Arial, Helvetica, sans-serif'
+        speechify-initial-font-size="14px"
+      >
+        <div
+          class="ui label"
+          speechify-initial-font-family='Lato, "Helvetica Neue", Arial, Helvetica, sans-serif'
+          speechify-initial-font-size="14px"
+          style="
+            font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            font-size: 14px;
+          "
+        >
+          Quantity
+        </div>
+        <input
+          type="number"
+          placeholder="1"
+          speechify-initial-font-family='Lato, "Helvetica Neue", Arial, Helvetica, sans-serif'
+          speechify-initial-font-size="14px"
+          style="
+            font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            font-size: 14px;
+          "
+          [(ngModel)]="quantity"
+        />
+
+        <button
+          class="ui teal right icon button"
+          speechify-initial-font-family='Lato, "Helvetica Neue", Arial, Helvetica, sans-serif'
+          speechify-initial-font-size="14px"
+          style="
+            font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            font-size: 14px;
+          "
+        >
+          <i
+            class="cart icon"
+            speechify-initial-font-family="Icons"
+            speechify-initial-font-size="14px"
+            style="font-family: Icons; font-size: 14px"
+          ></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

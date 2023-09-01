@@ -6,5 +6,10 @@ day11
 .vscode
 =======
 day12
+<<<<<<< HEAD
 angularproject
 >>>>>>> d2c629b (s)
+=======
+.angular
+.vscode
+>>>>>>> 24081a9 (g)
