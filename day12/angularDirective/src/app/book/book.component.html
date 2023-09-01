@@ -1,0 +1,47 @@
+<h2>Angular Directives</h2>
+<p *ngIf="model.getBooks().length > 0">
+  There are {{ model.getBooks().length }} books in stock
+</p>
+<p *ngIf="model.getBooks().length == 0">There is no book in stock!</p>
+
+<h2>[hidden] property</h2>
+<p [hidden]="model.getBooks().length == 0">
+  There ARE books in stock: {{ model.getBooks().length }}
+</p>
+<p [hidden]="model.getBooks().length != 0">There AREN’T books in stock!</p>
+<h2>ngSwitch directive</h2>
+<div [ngSwitch]="model.getBooks().length">
+  <span *ngSwitchCase="0">There is no book in stock</span>
+  <span *ngSwitchCase="1">There is 1 book in stock</span>
+  <span *ngSwitchCase="2">There are 2 books in stock</span>
+  <span *ngSwitchDefault>There are more than 2 books in stock</span>
+</div>
+<h2>ngFor Directive</h2>
+<ul>
+  <li *ngFor="let book of model.getBooks(); index as i; first as f">
+    {{ i }} <em>{{ book.name }} </em> ${{ book.price }}
+    <span *ngIf="f">IS THE FIRST BOOK</span>
+
+    <button (click)="updatePrice(book)">Update price</button>
+    <button (click)="updateName(book)">Update name</button>
+    <button (click)="deleteBook(book)">Delete</button>
+  </li>
+</ul>
+<h2>ngTemplateOutlet</h2>
+<ng-template [ngTemplateOutlet]="booklist" />
+<ng-template #booklist>
+  <div>
+    <ul>
+      <li *ngFor="let book of model.getBooks()">
+        {{ book.name }}
+      </li>
+    </ul>
+  </div>
+</ng-template>
+<ng-template [ngTemplateOutlet]="booklist" />
+<ng-template [ngTemplateOutlet]="booklist" />
+<h2>Custom Directive</h2>
+<label
+  >Enter an email address
+  <input type="text" appEmail />
+</label>

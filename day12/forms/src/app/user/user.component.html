@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="form">
+    <div class="form_group">
+      <label for="name">Name</label>
+      <input
+        required
+        pattern="[a-zA-Z]*"
+        minlength="3"
+        maxlength="30"
+        [(ngModel)]="newUser.name"
+        name="userName"
+        #name="ngModel"
+        (change)="displayLog(name)"
+        type="text"
+        class="form_control"
+        id="name"
+      />
+      <div *ngIf="!name.valid && name.touched" class="validMsg">
+        <p *ngIf="name.errors?.['required']">Name is required!</p>
+        <p *ngIf="name.errors?.['minlength'] && !name.errors?.['required']">
+          Name must have at least 2 characters
+        </p>
+        <p *ngIf="name.errors?.['pattern'] && !name.errors?.['minlength'] ">
+          Name must be only letters
+        </p>
+      </div>
+    </div>
+    <div class="form_group">
+      <label for="e">Email</label>
+      <input
+        required
+        type="email"
+        id="e"
+        [(ngModel)]="newUser.email"
+        #email="ngModel"
+        class="form_control"
+        email
+      />
+      <div *ngIf="!email.valid && email.touched" class="validMsg">
+        <p *ngIf="email.errors?.['required']">Email is required!</p>
+        <p *ngIf="email.errors?.['email'] && !email.errors?.['required']">
+          Email is not valid
+        </p>
+      </div>
+    </div>
+    <button class="submit_btn">Submit</button>
+    <div class="json_display">
+      <p>Result</p>
+      <p>{{ jsonUser }}</p>
+    </div>
+  </div>
+</div>
