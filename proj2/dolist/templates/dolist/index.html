@@ -18,15 +18,28 @@
 
       <!-- DELETE BUTTONS -->
       <div class="btn_group">
-        <button class="btn_del">DELETE COMPLETED</button>
-        <button class="btn_del">DELETE ALL</button>
+        <form method="POST">
+          {% csrf_token %}
+
+          <button class="btn_del" name="del" value="del_completed">
+            DELETE COMPLETED
+          </button>
+        </form>
+        <form method="POST">
+          {% csrf_token %}
+
+          <button class="btn_del" name="del" value="del_all">DELETE ALL</button>
+        </form>
       </div>
 
       <!-- LIST DISPLAY -->
       <ul class="list_do">
         <li class="list_item">Add a do list</li>
-        <li class="list_item completed">Finish project 1</li>
-        <li class="list_item completed">Finish project 2</li>
+        {% for i in todo_items %} {% if i.completed %}
+        <li class="list_item completed">{{i.text}}</li>
+        {% else %}
+        <li class="list_item">{{i.text}}</li>
+        {% endif %} {% endfor %}
       </ul>
     </main>
   </body>
